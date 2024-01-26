@@ -1,2 +1,2 @@
 # web_dev_class
-Lab 1
+Lab-1
