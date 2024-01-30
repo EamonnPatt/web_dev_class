@@ -13,40 +13,37 @@
     <title>Lab 1 Webpage</title>
     <style>
         html, body {
-            height: 100%; /* Ensures the body takes the full height of the viewport */
-            margin: 0; /* Removes default margin */
-        }
+            height: 100%; 
+            margin: 0; 
         .header-container {
             text-align: center;
+            color: blue;
         }
         .header-container h1, .header-container img {
             display: inline;
             vertical-align: middle;
-            color: blue;
         }
         .header-links a {
-            font-size: 18px;
-            background-color: #ADD8E6;
-            color: black;
-            padding: 5px 12px;
-            text-decoration: none;
-            margin: 0 4px;
-            border-radius: 3px;
-        }
-        .content-container {
-            display: flex; /* Enables flexbox */
-            height: 80vh; /* 80% of the viewport height */
-        }
-        .main-section, .second-section {
-            flex: 1; /* Both sections will take equal width */
-            padding: 20px;
-            box-sizing: border-box; /* Includes padding in the width calculation */
+            font-size: 18px; 
+            background-color: #ADD8E6; 
+            color: black; 
+            padding: 5px 12px; 
+            text-decoration: none; 
+            margin: 0 4px; 
+            border-radius: 3px; 
         }
         .main-section {
-            background-color: #f2f2f2;
+            width: 70%;
+            margin-right: auto; 
+            background-color: #f2f2f2; 
+            padding: 20px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
         }
         .second-section {
+            width: 30%;
+            margin-left: auto;
             background-color: blue;
+            padding: 20px;
         }
     </style>
 </head>
@@ -59,14 +56,12 @@
             <a href="https://thebigpimpin69.github.io/web_dev_class/Lab_1.html">Home</a>
             <a href="https://github.com/TheBigPimpin69/web_dev_class">Repository</a>
         </div>
-        <br>
-        <div class="content-container">
-            <div class="main-section">
-                <p>This is the main section of the page.</p>
-            </div>
-            <div class="second-section">
-                <p>This is the second section of the page.</p>
-            </div>
+	<br>
+        <div class="main-section">
+            <p>This is the main section of the page.</p>
+        </div>
+        <div class="second-section">
+            <p>This is the second section of the page.</p>
         </div>
         <img src="assets/assets/favorite-1.jpg" alt="dove image" height="100" width="100">
     </div>
