@@ -11,13 +11,17 @@
     <meta charset="utf-8">
     <title>Lab 1 Webpage</title>
     <style>
+        html, body {
+            height: 100%; /* Ensures the body takes the full height of the viewport */
+            margin: 0; /* Removes default margin */
+        }
         .header-container {
             text-align: center;
         }
         .header-container h1, .header-container img {
             display: inline;
             vertical-align: middle;
-		color: blue;
+            color: blue;
         }
         .header-links a {
             font-size: 18px; 
@@ -28,31 +32,29 @@
             margin: 0 4px; 
             border-radius: 3px; 
         }
-	 .main-section {
-            width: 67%;
-            margin-right: auto; 
-            background-color: #f2f2f2; 
-            padding: 20px; 
-            
+        .main-section, .second-section {
+            width: 80%; /* Set the width to 80% */
+            margin: 10% auto; /* Centers the div and provides equal top and bottom margins */
+            background-color: #f2f2f2;
+            padding: 20px;
+            box-sizing: border-box; /* Includes padding in the height calculation */
+            min-height: 40%; /* Each section will take at least 40% of the viewport height */
         }
-	.second-section {
-		width:28%;
-		margin-left:auto;
-		background-color: blue;
-		padding: 20px;
+        .second-section {
+            background-color: blue;
+        }
     </style>
 </head>
 <body>
     <div class="header-container">
         <h1><em>Bird Watching</em></h1>
         <img src="assets/assets/dove.png" alt="dove logo" height="50" width="50">
-        <br>
-	<br>
+        <br><br>
         <div class="header-links">
             <a href="https://thebigpimpin69.github.io/web_dev_class/Lab_1.html">Home</a>
             <a href="https://github.com/TheBigPimpin69/web_dev_class">Repository</a>
         </div>
-	<br>
+        <br>
         <div class="main-section">
             <p>This is the main section of the page.</p>
         </div>
