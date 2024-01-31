@@ -15,14 +15,13 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
             background-color: #DAF7A6;
         }
         .header {
             background-color: #4CAF50;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
         }
         .header img {
             float: right;
@@ -39,41 +38,48 @@
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
-            background-color: green;
+            background-color: #4CAF50;
         }
         .nav-bar a:hover {
             background-color: #ddd;
             color: black;
         }
-        .main-content {
+        .content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
             background-color: #DAF7A6;
-            padding: 15px;
-            margin-top: 15px;
-            height: 200px; /* Adjust as needed */
         }
-        .side-content {
-            background-color: #DAF7A6;
+        .main-content, .sidebar {
             padding: 15px;
-            margin-top: 15px;
-            height: 200px; /* Adjust as needed */
-            float: right;
-            width: 30%; /* Adjust as needed */
+            background-color: #FFFFFF;
+            border: 1px solid #CCCCCC;
+        }
+        .main-content {
+            flex-grow: 2;
+            margin-right: 20px;
+        }
+        .sidebar {
+            flex-grow: 1;
         }
         .footer {
             background-color: #4CAF50;
             color: white;
             text-align: center;
             padding: 10px 0;
-            position: absolute;
-            bottom: 0;
+            margin-top: 20px;
+        }
+        .favorite-photos img {
             width: 100%;
+            height: auto;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>BIRDWATCHING</h1>
-        <img src="dove.png" alt="Dove Icon" height="50" width="50">
+        <img src="/path/to/dove.png" alt="Dove Icon">
     </div>
     <div class="nav-bar">
         <a href="#home">HOME</a>
@@ -82,14 +88,21 @@
         <a href="#gear">GEAR</a>
         <a href="#forum">FORUM</a>
     </div>
-    <div class="main-content">
-        <h2>Welcome</h2>
-        <p>Welcome to our fake birdwatching site. If this were a real site, it would be the ideal place to come to learn more about birdwatching, whether you are a beginner looking to learn how to get into birding, or an expert wanting to share ideas, tips, and photos with other like-minded people.</p>
-        <p>So don't waste time! Get what you need, then turn off that computer and get out into the great outdoors!</p>
-    </div>
-    <div class="side-content">
-        <h2>Favourite Photos</h2>
-        <!-- Photos would be added here -->
+    <div class="content">
+        <div class="main-content">
+            <h2>Welcome</h2>
+            <p>Welcome to our fake birdwatching site. If this were a real site, it would be the ideal place to come to learn more about birdwatching, whether you are a beginner looking to learn how to get into birding, or an expert wanting to share ideas, tips, and photos with other like-minded people.</p>
+            <p>So don't waste time! Get what you need, then turn off that computer and get out into the great outdoors!</p>
+        </div>
+        <div class="sidebar">
+            <h2>Favourite Photos</h2>
+            <div class="favorite-photos">
+                <img src="assets/assets/favorite-1.jpg" alt="Bird Photo 1">
+                <img src="assets/assets/favorite-2.jpg" alt="Bird Photo 2">
+                <img src="assets/assets/favorite-3.jpg" alt="Bird Photo 3">
+                <img src="assets/assets/favorite-4.jpg" alt="Bird Photo 4">
+            </div>
+        </div>
     </div>
     <div class="footer">
         <p>This fake website example is CC0 — any part of this code may be reused in any way you wish. Original example written by Chris Mills, 2016.</p>
