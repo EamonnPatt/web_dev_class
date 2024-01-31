@@ -5,82 +5,96 @@
 	Date: 1/25/2024
   lab 1 webpage
 	-->
-
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="utf-8">
-
-    <title>My page title</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300%7CSonsie+One" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="style.css">
-  </head>
-
-  <body>
-    <!-- Here is our main header that is used across all the pages of our website -->
-
-    <header>
-      <h1>Header</h1>
-    </header>
-
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Our team</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-
-      <!-- A Search form is another common non-linear way to navigate through a website. -->
-
-      <form>
-        <input type="search" name="q" placeholder="Search query">
-        <input type="submit" value="Go!">
-      </form>
-    </nav>
-
-    <!-- Here is our page's main content -->
-    <main>
-
-      <!-- It contains an article -->
-      <article>
-        <h2>Article heading</h2>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Donec a diam lectus. Set sit amet ipsum mauris. Maecenas congue ligula as quam viverra nec consectetur ant hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.</p>
-
-        <h3>subsection</h3>
-
-        <p>Donec ut librero sed accu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor.</p>
-
-        <p>Pelientesque auctor nisi id magna consequat sagittis. Curabitur dapibus, enim sit amet elit pharetra tincidunt feugiat nist imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros.</p>
-
-        <h3>Another subsection</h3>
-
-        <p>Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum soclis natoque penatibus et manis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.</p>
-
-        <p>Vivamus fermentum semper porta. Nunc diam velit, adipscing ut tristique vitae sagittis vel odio. Maecenas convallis ullamcorper ultricied. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, is fringille sem nunc vet mi.</p>
-      </article>
-
-      <!-- the aside content can also be nested within the main content -->
-      <aside>
-        <h2>Related</h2>
-
-        <ul>
-          <li><a href="#">Oh I do like to be beside the seaside</a></li>
-          <li><a href="#">Oh I do like to be beside the sea</a></li>
-          <li><a href="#">Although in the North of England</a></li>
-          <li><a href="#">It never stops raining</a></li>
-          <li><a href="#">Oh well...</a></li>
-        </ul>
-      </aside>
-
-    </main>
-
-    <!-- And here is our main footer that is used across all the pages of our website -->
-
-    <footer>
-      <p>©Copyright 2050 by nobody. All rights reversed.</p>
-    </footer>
-
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Birdwatching</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #DAF7A6;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .header img {
+            float: right;
+            margin-right: 20px;
+        }
+        .nav-bar {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .nav-bar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            background-color: green;
+        }
+        .nav-bar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .main-content {
+            background-color: #DAF7A6;
+            padding: 15px;
+            margin-top: 15px;
+            height: 200px; /* Adjust as needed */
+        }
+        .side-content {
+            background-color: #DAF7A6;
+            padding: 15px;
+            margin-top: 15px;
+            height: 200px; /* Adjust as needed */
+            float: right;
+            width: 30%; /* Adjust as needed */
+        }
+        .footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>BIRDWATCHING</h1>
+        <img src="dove.png" alt="Dove Icon" height="50" width="50">
+    </div>
+    <div class="nav-bar">
+        <a href="#home">HOME</a>
+        <a href="#get-started">GET STARTED</a>
+        <a href="#photos">PHOTOS</a>
+        <a href="#gear">GEAR</a>
+        <a href="#forum">FORUM</a>
+    </div>
+    <div class="main-content">
+        <h2>Welcome</h2>
+        <p>Welcome to our fake birdwatching site. If this were a real site, it would be the ideal place to come to learn more about birdwatching, whether you are a beginner looking to learn how to get into birding, or an expert wanting to share ideas, tips, and photos with other like-minded people.</p>
+        <p>So don't waste time! Get what you need, then turn off that computer and get out into the great outdoors!</p>
+    </div>
+    <div class="side-content">
+        <h2>Favourite Photos</h2>
+        <!-- Photos would be added here -->
+    </div>
+    <div class="footer">
+        <p>This fake website example is CC0 — any part of this code may be reused in any way you wish. Original example written by Chris Mills, 2016.</p>
+        <p>Dove icon by Lorc.</p>
+    </div>
+</body>
 </html>
+
