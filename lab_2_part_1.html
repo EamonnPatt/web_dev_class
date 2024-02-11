@@ -21,7 +21,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 10px;
-	    margin-top: 50px;
+            margin-top: 50px;
         }
 
         .header {
@@ -37,8 +37,20 @@
             margin-left: 10px;
         }
 
+        .thumbnail {
+            flex: 0 0 30%; /* Take 30% of the available space */
+            padding: 10px;
+            box-sizing: border-box; /* Include padding in the width */
+        }
+
+        .thumbnail img {
+            width: 100%; /* Make the image fill its container */
+        }
+
         .text-section {
-            text-align: center;
+            flex: 1; /* Take remaining space */
+            padding: 10px;
+            box-sizing: border-box; /* Include padding in the width */
         }
 
         .text-section h2 {
@@ -67,7 +79,7 @@
     <div class="grey-area">
         <div class="thumbnail">
             <a href="https://www.youtube.com/watch?v=mAia0v3ojzw">
-                <img src="https://img.youtube.com/vi/mAia0v3ojzw/hqdefault.jpg" alt="Video Thumbnail" height="200" width="200">
+                <img src="https://img.youtube.com/vi/mAia0v3ojzw/hqdefault.jpg" alt="Video Thumbnail">
             </a>
         </div>
         
@@ -89,4 +101,5 @@
     <p>pp</p>
 </body>
 </html>
+
 
