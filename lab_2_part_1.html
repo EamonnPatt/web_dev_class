@@ -17,11 +17,12 @@
         .grey-area {
             margin: 0 auto;
             background-color: #ccc;
-            display: block;
+            display: flex; /* Use flexbox */
+            align-items: center; /* Center align vertically */
+            justify-content: space-between; /* Distribute items evenly */
             padding: 10px;
             margin-top: 20px;
-            text-align: left;
-	    max-width: 600px;
+            max-width: 600px;
         }
 
         .header {
@@ -33,9 +34,9 @@
         }
 
         .logo {
-            float: right; 
-            margin-left: 10px; 
-       }
+            float: right;
+            margin-left: 10px;
+        }
 
         .text-section {
             text-align: center;
