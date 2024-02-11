@@ -17,10 +17,12 @@
         .grey-area {
             margin: 0 auto;
             background-color: #ccc;
-            display: flex; /* Use flexbox */
-            align-items: center; /* Center align vertically */
-            justify-content: space-between; /* Distribute items evenly */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
             margin-top: 20px;
+            max-width: 600px;
         }
 
         .header {
@@ -43,12 +45,24 @@
         .text-section h2 {
             font-weight: bold;
         }
+
+        .red-images {
+            background-color: #8B0000; /* Darkish red background */
+            text-align: center;
+            padding: 20px;
+        }
+
+        .red-images img {
+            margin: 10px; /* Add margin between images */
+            width: 200px; /* Set width of images */
+            height: 200px; /* Set height of images */
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>Mozilla</h1>
-        <img class="logo" src="assets/assets/firefox_logo-only_RGB.png" height="75" width="75">
+        <img class="logo" src="assets/assets/firefox_logo-only_RGB.png" height="50" width="65">
     </div>
 
     <div class="grey-area">
@@ -65,7 +79,15 @@
         </div>
     </div>
 
+    <div class="red-images">
+        <img src="https://via.placeholder.com/200" alt="Image 1">
+        <img src="https://via.placeholder.com/200" alt="Image 2">
+        <img src="https://via.placeholder.com/200" alt="Image 3">
+        <img src="https://via.placeholder.com/200" alt="Image 4">
+    </div>
+
     <p>This is a paragraph.</p>
     <p>pp</p>
 </body>
 </html>
+
