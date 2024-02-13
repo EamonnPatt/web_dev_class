@@ -5,7 +5,6 @@
   lab 2 aplash page
 	-->
 
-       
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +31,7 @@
 
         .header h1 {
             display: inline;
-	    font-weight: bold;
+            font-weight: bold;
         }
 
         .logo {
@@ -83,7 +82,7 @@
 <body>
     <div class="header">
         <h1>Mozilla</h1>
-        <img class="logo" src="assets/assets/firefox_logo-only_RGB.png" height="75" width="75" alt="logo">
+        <img class="logo" src="assets/assets/firefox_logo-only_RGB.png" height="75" width="75" alt="Firefox logo">
     </div>
 
     <div class="grey-area">
@@ -101,14 +100,22 @@
     </div>
 
     <div class="red-images">
-        <img src="assets/assets/firefox_logo-only_RGB.png" alt="Image 1">
-        <img src="assets/assets/mozilla-dinosaur-head.png" alt="Image 2">
-        <img src="assets/assets/firefox-addons.jpg" alt="Image 3">
-        <img src="assets/assets/mdn.svg" alt="Image 4">
+        <a href="https://www.mozilla.org">
+            <img src="assets/assets/firefox_logo-only_RGB_120.png" alt="Mozilla Dinosaur Logo" srcset="assets/assets/firefox_logo-only_RGB_400.png 400w, assets/assets/firefox_logo-only_RGB_120.png 120w" sizes="(max-width: 600px) 120px, 400px">
+        </a>
+        <a href="https://addons.mozilla.org">
+            <img src="assets/assets/firefox-addons_120.jpg" alt="Firefox Add-ons Logo" srcset="assets/assets/firefox-addons_400.jpg 400w, assets/assets/firefox-addons_120.jpg 120w" sizes="(max-width: 600px) 120px, 400px">
+        </a>
+        <a href="https://developer.mozilla.org/en-US/">
+            <img src="assets/assets/mdn.svg" alt="Mozilla Developer Network (MDN) Logo">
+        </a>
     </div>
     
     <div>
-        <img src="assets/assets/red-panda.jpg" alt="Red Panda Image">
+        <picture>
+            <source media="(max-width: 600px)" srcset="assets/assets/red-panda-portrait-small.jpg">
+            <img src="assets/assets/red-panda-landscape.jpg" alt="a red panda">
+        </picture>
     </div>
 </body>
 </html>
