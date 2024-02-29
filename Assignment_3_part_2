@@ -10,3 +10,14 @@
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width" >
     <style>
+	box {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+
+</head>
+<body>
+<box>
