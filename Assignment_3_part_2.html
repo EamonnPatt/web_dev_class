@@ -1,79 +1,60 @@
+<!--
+	Name: Eamonn Patterson
+	File: Assignment_3_part_2.html
+	Date: 2/29/2024
+  assignment 3 a cool looking box
+	-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <style>
-    body, html {
-      height: 100%;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-    }
-    .box {
-      background-color: #4CAF50; /* Base color for the design */
-      width: 200px; /* A reasonable width for a large box */
-      height: 300px; /* A reasonable height for a large box */
-      border: 1px solid #388E3C; /* A 1-pixel solid border with a slightly darker shade */
-      border-radius: 10px; /* A fairly subtle border radius */
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Standard box shadow to make the box slightly raised */
-      position: relative;
-      overflow: hidden;
-    }
-    .text {
-      color: white; /* Contrasting color for the text */
-      font-size: 17.5px; /* A slight increase in font size */
-      text-align: center;
-      position: absolute;
-      top: 50%; /* Center the text vertically */
-      left: 50%; /* Center the text horizontally */
-      transform: translate(-50%, -50%);
-      text-shadow: 1px 1px 1px black; /* Black text shadow */
-    }
-    .gradient {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.2) 100%);
-    }
-    .inset-shadow-top-left {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      width: calc(100% - 20px);
-      height: calc(50% - 10px);
-      box-shadow: inset 3px 3px 5px rgba(255, 255, 255, 0.5); /* Semi-transparent white shadow near the top left */
-    }
-    .inset-shadow-bottom-right {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      width: calc(100% - 20px);
-      height: calc(50% - 10px);
-      box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.5); /* Semi-transparent black shadow near the bottom right */
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="box">
-      <div class="gradient"></div>
-      <div class="inset-shadow-top-left"></div>
-      <div class="inset-shadow-bottom-right"></div>
-      <div class="text">
-        <p>A Cool Looking Box</p>
+  <head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width" >
+    <style>
+      body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+      .box {
+        background-color: #3498db; /* Base color */
+        border: 1px solid #2980b9; /* Slightly darker shade of the base color */
+        border-radius: 10px; /* Subtle border radius */
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3), /* Standard box shadow */
+                    inset 2px 2px 2px rgba(255,255,255,0.5), /* White shadow near the top left */
+                    inset -2px -2px 2px rgba(0,0,0,0.5); /* Black shadow near the bottom right */
+        width: 200px; /* Reasonable width */
+        height: 200px; /* Reasonable height */
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: linear-gradient(to bottom right, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.2) 100%); /* Semi-transparent black gradient */
+      }
+      .text {
+        color: #ecf0f1; /* Contrasting color */
+        text-shadow: 1px 1px 1px black; /* Black text shadow */
+        font-size: 1.125rem; /* 18px when the base font size is 16px */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="text">
+          <p>A Cool Looking Box</p>
+        </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
+</html>
+
 </html>
