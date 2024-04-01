@@ -10,4 +10,6 @@ Assignment 3 part 2 https://thebigpimpin69.github.io/web_dev_class/Assignment_3_
 
 Assignment 3 part 3 https://thebigpimpin69.github.io/web_dev_class/Assignment_3_part_3.html
 
-ASsignment 3 part 4 https://thebigpimpin69.github.io/web_dev_class/assignment_3/Assignment_3_part_4.html
+Assignment 3 part 4 https://thebigpimpin69.github.io/web_dev_class/Assignment_3_part_4.html
+
+Assignment 4 part 1 https://thebigpimpin69.github.io/web_dev_class/Assignment_4_part_1.html
