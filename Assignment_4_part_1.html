@@ -62,7 +62,7 @@ function randomValueFromArray(array){
   return array[random];
 }
 
-const storyText = " x dreamt that one day :insert1:, is going for a walk and thinks it's really nice outside. :insert1: was walking along the :insert2:. it is the perfect temperature.As you reach the :insert3:, they decide to turn back."
+const storyText = " x dreamt that one day :insert1:, is going for a walk and thinks it's really nice outside, it was 100 F. :insert1: was walking along the :insert2:. it is the perfect temperature.As you reach the :insert3:, they decide to turn back."
 
 const insert1 = ['poopman', 'micheal jackson', 'superman'];
 const insert2 = ['river', 'sewer', 'forest'];
@@ -87,10 +87,9 @@ function result() {
   }
 
   if (document.getElementById("uk").checked) {
-    const weight = `${Math.round(300*0.0714286)} stone`;
     const temperature =  `${Math.round((94-32) * 5 / 9)} centigrade`;
-    newStory = newStory.replaceAll('94 fahrenheit', temperature);
-    newStory = newStory.replaceAll('300 pounds', weight);
+    newStory = newStory.replaceAll('100', temperature);
+    newStory = newStory.replaceAll('F', 'C');
   }
 
   story.textContent = newStory;
