@@ -30,7 +30,7 @@ const overlay = document.querySelector('.overlay');
 
 /* Declaring the array of image filenames */
 
-const images = ['assets/assets/pic1.jpg', `assets/assets/pic2.jpg`, `assets/assets/pic3.jpg`, `assets/assets/pic4.jpg`, `assets/assets/pic5.jpg`];
+const images = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg']; // Removed 'assets/assets/' from the filenames
 const alts = {
   'pic1.jpg' : 'Closeup of a human eye',
   'pic2.jpg' : 'mountain',
@@ -42,7 +42,7 @@ const alts = {
 
 for (const image of images) {
   const newImage = document.createElement('img');
-  newImage.setAttribute('src', assets/assets/${image});
+  newImage.setAttribute('src', `assets/assets/${image}`); // Corrected path concatenation
   newImage.setAttribute('alt', alts[image]);
   thumbBar.appendChild(newImage);
   newImage.addEventListener('click', e => {
@@ -66,3 +66,4 @@ btn.addEventListener('click', () => {
 });</script>
   </body>
 </html>
+
