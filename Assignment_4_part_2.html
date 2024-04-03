@@ -22,48 +22,69 @@
 
 
     </div>
-    <script>const displayedImage = document.querySelector('.displayed-img');
-const thumbBar = document.querySelector('.thumb-bar');
+    <script>
+      const displayedImage = document.querySelector('.displayed-img');
+      const thumbBar = document.querySelector('.thumb-bar');
+      const btn = document.querySelector('button');
+      const overlay = document.querySelector('.overlay');
 
-const btn = document.querySelector('button');
-const overlay = document.querySelector('.overlay');
+      const images = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg']; // Removed 'assets/assets/' from the filenames
+      const alts = {
+        'pic1.jpg' : 'Closeup of a human eye',
+        'pic2.jpg' : 'mountain',
+        'pic3.jpg' : 'lion',
+        'pic4.jpg' : 'ocean',
+        'pic5.jpg' : 'train'
+      }
 
-/* Declaring the array of image filenames */
+      let currentIndex = 0;
 
-const images = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg']; // Removed 'assets/assets/' from the filenames
-const alts = {
-  'pic1.jpg' : 'Closeup of a human eye',
-  'pic2.jpg' : 'mountain',
-  'pic3.jpg' : 'lion',
-  'pic4.jpg' : 'ocean',
-  'pic5.jpg' : 'train'
-}
+      function updateDisplayedImage(index) {
+        displayedImage.src = `assets/assets/${images[index]}`;
+        displayedImage.alt = alts[images[index]];
+      }
 
+      function handleKeyboardEvent(event) {
+        switch(event.key) {
+          case 'ArrowLeft':
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateDisplayedImage(currentIndex);
+            break;
+          case 'ArrowRight':
+            currentIndex = (currentIndex + 1) % images.length;
+            updateDisplayedImage(currentIndex);
+            break;
+          default:
+            break;
+        }
+      }
 
-for (const image of images) {
-  const newImage = document.createElement('img');
-  newImage.setAttribute('src', `assets/assets/${image}`); // Corrected path concatenation
-  newImage.setAttribute('alt', alts[image]);
-  thumbBar.appendChild(newImage);
-  newImage.addEventListener('click', e => {
-    displayedImage.src = e.target.src;
-    displayedImage.alt = e.target.alt;
-  });
-}
+      document.addEventListener('keydown', handleKeyboardEvent);
 
+      for (let i = 0; i < images.length; i++) {
+        const newImage = document.createElement('img');
+        newImage.setAttribute('src', `assets/assets/${images[i]}`);
+        newImage.setAttribute('alt', alts[images[i]]);
+        thumbBar.appendChild(newImage);
+        newImage.addEventListener('click', () => {
+          currentIndex = i;
+          updateDisplayedImage(currentIndex);
+        });
+      }
 
-btn.addEventListener('click', () => {
-  const btnClass = btn.getAttribute('class');
-  if (btnClass === 'dark') {
-    btn.setAttribute('class','light');
-    btn.textContent = 'Lighten';
-    overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
-  } else {
-    btn.setAttribute('class','dark');
-    btn.textContent = 'Darken';
-    overlay.style.backgroundColor = 'rgba(0,0,0,0)';
-  }
-});</script>
+      btn.addEventListener('click', () => {
+        const btnClass = btn.getAttribute('class');
+        if (btnClass === 'dark') {
+          btn.setAttribute('class','light');
+          btn.textContent = 'Lighten';
+          overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+        } else {
+          btn.setAttribute('class','dark');
+          btn.textContent = 'Darken';
+          overlay.style.backgroundColor = 'rgba(0,0,0,0)';
+        }
+      });
+    </script>
   </body>
 </html>
 
