@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Image gallery</title>
+    <title>Image gallery  Arrow keys for accesibility</title>
 
     <style>
       .thumb-bar {
@@ -12,7 +12,7 @@
       }
 
       .thumb-bar img {
-        width: 100px; /* Adjust this size as needed */
+        width: 100px; 
         height: auto;
         margin-right: 10px;
         cursor: pointer;
@@ -45,7 +45,7 @@ let currentImageIndex = 0;
 
 /* Declaring the array of image filenames */
 
-const images = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg']; // Removed 'assets/assets/' from the filenames
+const images = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg']; 
 const alts = {
   'pic1.jpg' : 'Closeup of a human eye',
   'pic2.jpg' : 'mountain',
@@ -57,7 +57,7 @@ const alts = {
 
 for (const [index, image] of images.entries()) {
   const newImage = document.createElement('img');
-  newImage.setAttribute('src', `assets/assets/${image}`); // Corrected path concatenation
+  newImage.setAttribute('src', `assets/assets/${image}`); 
   newImage.setAttribute('alt', alts[image]);
   newImage.classList.add('thumbnail');
   thumbBar.appendChild(newImage);
@@ -68,7 +68,7 @@ for (const [index, image] of images.entries()) {
   });
 }
 
-// Function to show the next image
+
 function showNextImage() {
   if (currentImageIndex < images.length - 1) {
     currentImageIndex++;
@@ -77,7 +77,7 @@ function showNextImage() {
   }
 }
 
-// Function to show the previous image
+
 function showPreviousImage() {
   if (currentImageIndex > 0) {
     currentImageIndex--;
@@ -86,7 +86,6 @@ function showPreviousImage() {
   }
 }
 
-// Event listener for the button to toggle dark/light mode
 btn.addEventListener('click', () => {
   const btnClass = btn.getAttribute('class');
   if (btnClass === 'dark') {
@@ -100,7 +99,6 @@ btn.addEventListener('click', () => {
   }
 });
 
-// Event listener for keyboard events
 document.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowLeft') {
     showPreviousImage();
