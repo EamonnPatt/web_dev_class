@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width">
     <title>Image gallery</title>
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+      .thumb-bar {
+        display: flex;
+        overflow-x: auto;
+      }
 
+      .thumb-bar img {
+        width: 100px; /* Adjust this size as needed */
+        height: auto;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      .thumb-bar img:last-child {
+        margin-right: 0;
+      }
+    </style>
   </head>
 
   <body>
@@ -22,69 +37,76 @@
 
 
     </div>
-    <script>
-      const displayedImage = document.querySelector('.displayed-img');
-      const thumbBar = document.querySelector('.thumb-bar');
-      const btn = document.querySelector('button');
-      const overlay = document.querySelector('.overlay');
+    <script>const displayedImage = document.querySelector('.displayed-img');
+const thumbBar = document.querySelector('.thumb-bar');
+const overlay = document.querySelector('.overlay');
+const btn = document.querySelector('button');
+let currentImageIndex = 0;
 
-      const images = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg']; // Removed 'assets/assets/' from the filenames
-      const alts = {
-        'pic1.jpg' : 'Closeup of a human eye',
-        'pic2.jpg' : 'mountain',
-        'pic3.jpg' : 'lion',
-        'pic4.jpg' : 'ocean',
-        'pic5.jpg' : 'train'
-      }
+/* Declaring the array of image filenames */
 
-      let currentIndex = 0;
+const images = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg']; // Removed 'assets/assets/' from the filenames
+const alts = {
+  'pic1.jpg' : 'Closeup of a human eye',
+  'pic2.jpg' : 'mountain',
+  'pic3.jpg' : 'lion',
+  'pic4.jpg' : 'ocean',
+  'pic5.jpg' : 'train'
+}
 
-      function updateDisplayedImage(index) {
-        displayedImage.src = `assets/assets/${images[index]}`;
-        displayedImage.alt = alts[images[index]];
-      }
 
-      function handleKeyboardEvent(event) {
-        switch(event.key) {
-          case 'ArrowLeft':
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            updateDisplayedImage(currentIndex);
-            break;
-          case 'ArrowRight':
-            currentIndex = (currentIndex + 1) % images.length;
-            updateDisplayedImage(currentIndex);
-            break;
-          default:
-            break;
-        }
-      }
+for (const [index, image] of images.entries()) {
+  const newImage = document.createElement('img');
+  newImage.setAttribute('src', `assets/assets/${image}`); // Corrected path concatenation
+  newImage.setAttribute('alt', alts[image]);
+  newImage.classList.add('thumbnail');
+  thumbBar.appendChild(newImage);
+  newImage.addEventListener('click', e => {
+    displayedImage.src = e.target.src;
+    displayedImage.alt = e.target.alt;
+    currentImageIndex = index;
+  });
+}
 
-      document.addEventListener('keydown', handleKeyboardEvent);
+// Function to show the next image
+function showNextImage() {
+  if (currentImageIndex < images.length - 1) {
+    currentImageIndex++;
+    displayedImage.src = `assets/assets/${images[currentImageIndex]}`;
+    displayedImage.alt = alts[images[currentImageIndex]];
+  }
+}
 
-      for (let i = 0; i < images.length; i++) {
-        const newImage = document.createElement('img');
-        newImage.setAttribute('src', `assets/assets/${images[i]}`);
-        newImage.setAttribute('alt', alts[images[i]]);
-        thumbBar.appendChild(newImage);
-        newImage.addEventListener('click', () => {
-          currentIndex = i;
-          updateDisplayedImage(currentIndex);
-        });
-      }
+// Function to show the previous image
+function showPreviousImage() {
+  if (currentImageIndex > 0) {
+    currentImageIndex--;
+    displayedImage.src = `assets/assets/${images[currentImageIndex]}`;
+    displayedImage.alt = alts[images[currentImageIndex]];
+  }
+}
 
-      btn.addEventListener('click', () => {
-        const btnClass = btn.getAttribute('class');
-        if (btnClass === 'dark') {
-          btn.setAttribute('class','light');
-          btn.textContent = 'Lighten';
-          overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
-        } else {
-          btn.setAttribute('class','dark');
-          btn.textContent = 'Darken';
-          overlay.style.backgroundColor = 'rgba(0,0,0,0)';
-        }
-      });
-    </script>
+// Event listener for the button to toggle dark/light mode
+btn.addEventListener('click', () => {
+  const btnClass = btn.getAttribute('class');
+  if (btnClass === 'dark') {
+    btn.setAttribute('class','light');
+    btn.textContent = 'Lighten';
+    overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+  } else {
+    btn.setAttribute('class','dark');
+    btn.textContent = 'Darken';
+    overlay.style.backgroundColor = 'rgba(0,0,0,0)';
+  }
+});
+
+// Event listener for keyboard events
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowLeft') {
+    showPreviousImage();
+  } else if (event.key === 'ArrowRight') {
+    showNextImage();
+  }
+});</script>
   </body>
 </html>
-
