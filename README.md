@@ -1,4 +1,4 @@
-Web development lab 1, html bird watching web page   https://EamonnPatt.github.io/web_dev_class/Lab_1/Lab_1.html
+Web development lab 1, html bird watching web page   https://EamonnPatt.github.io/web_dev_class/lab_1/Lab_1.html
 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
